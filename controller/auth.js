@@ -2,6 +2,7 @@ const User = require("../model/user");
 const phNumbervalidation = require("../utils/validmobno");
 const emailValidation = require("../utils/emailvalidation");
 const passwordvalidation = require("../utils/passvalidation");
+const loginIdvalidation = require("../utils/validloginid")
 
 exports.createUser = async (req,res) =>{
     console.log(req.body);
@@ -26,6 +27,13 @@ exports.createUser = async (req,res) =>{
             return res.status(400).json({
                 success: false,
                 message:"Enter a valid Email"
+            })
+        }
+        //loginId validation
+        if(!loginIdvalidation(loginId)){
+            return res.status(400).json({
+                success: false,
+                message:"Enter a valid Login use 8 characters alppha numeric"
             })
         }
 
