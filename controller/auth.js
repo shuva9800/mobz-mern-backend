@@ -33,7 +33,7 @@ exports.createUser = async (req,res) =>{
         if(!passwordvalidation(password)){
             return res.status(400).json({
                 success:false,
-                message:"password validation faleld check the requirement"
+                message:"password validation faleld follow instraction 6 characters, 1 upper case letter, 1 lower case letter, 1 special character"
             })
 
         }
