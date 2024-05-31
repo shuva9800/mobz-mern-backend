@@ -6,6 +6,4 @@ function isValidAlpha(value) {
     return alphaPattern.test(value);
 }
 
-module.exports = {
-    isValidAlpha
-};
+module.exports = isValidAlpha;
